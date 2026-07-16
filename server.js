@@ -37,7 +37,14 @@ app.post("/enhance-prompt", async (req, res) => {
     const result = await model.generateContent(`
 You are a professional AI prompt engineer.
 
-Rewrite the following prompt into a highly detailed cinematic AI video prompt.
+Rewrite the user's prompt into ONE professional cinematic AI video prompt.
+
+Rules:
+- Return ONLY the final prompt.
+- Do not add explanations.
+- Do not add titles.
+- Do not add tips.
+- Make it ready for AI video generation.
 
 Requirements:
 - Realistic
@@ -46,7 +53,8 @@ Requirements:
 - Natural lighting
 - Smooth camera movement
 - Ultra detailed
-- Keep the original meaning
+- Professional camera language
+- Keep the original meaning.
 
 Prompt:
 ${prompt}
