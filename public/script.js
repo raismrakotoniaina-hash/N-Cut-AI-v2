@@ -1,4 +1,4 @@
-
+alert("Script Loaded!");
 const button = document.getElementById("enhance");
 const result = document.getElementById("result");
 const promptBox = document.getElementById("prompt");
