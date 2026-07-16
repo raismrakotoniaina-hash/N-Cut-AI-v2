@@ -19,7 +19,7 @@ button.onclick = async ()=>{
 
     }
 
-
+Il
     result.innerText =
     "🤖 Gemini manatsara prompt...";
 
