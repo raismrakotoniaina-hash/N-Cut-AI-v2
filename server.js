@@ -31,7 +31,7 @@ app.post("/enhance-prompt", async (req, res) => {
     }
 
     const model = genAI.getGenerativeModel({
-      model: "gemini-2.5-flash-lite"
+      model: "gemini-3.1-flash-lite"
     });
 
     const result = await model.generateContent(`
@@ -70,6 +70,7 @@ ${prompt}
 
   }
 });
+
 
 app.listen(3000, () => {
   console.log("N-Cut AI V2 Server Running on port 3000");
