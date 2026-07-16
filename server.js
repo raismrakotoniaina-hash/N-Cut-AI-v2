@@ -80,6 +80,8 @@ ${prompt}
 });
 
 
-app.listen(3000, () => {
-  console.log("N-Cut AI V2 Server Running on port 3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`N-Cut AI V2 Server Running on port ${PORT}`);
 });
