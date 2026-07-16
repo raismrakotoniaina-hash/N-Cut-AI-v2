@@ -1,5 +1,5 @@
 alert("Script Loaded!");
-const button = document.getElementById("enhance");
+const button = document.getElementById("enhancePrompt");
 const result = document.getElementById("result");
 const promptBox = document.getElementById("prompt");
 
@@ -19,7 +19,7 @@ button.onclick = async ()=>{
 
     }
 
-Il
+
     result.innerText =
     "🤖 Gemini manatsara prompt...";
 
