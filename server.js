@@ -11,75 +11,66 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Gemini AI
-const genAI = new GoogleGenerativeAI(
-  process.env.GEMINI_API_KEY
-);
-
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 // Test page
-app.get("/", (req,res)=>{
+app.get("/", (req, res) => {
   res.send("N-Cut AI V2 Server Running 🚀");
 });
 
-
-// Gemini prompt enhancer
-app.post("/enhance-prompt", async(req,res)=>{
-
-  try{
-
+// Gemini Prompt Enhancer
+app.post("/enhance-prompt", async (req, res) => {
+  try {
     const { prompt } = req.body;
 
-    if(!prompt){
+    if (!prompt) {
       return res.json({
-        success:false,
-        error:"Tsy misy prompt"
+        success: false,
+        error: "Tsy misy prompt"
       });
     }
 
-
     const model = genAI.getGenerativeModel({
-      model:"gemini-1.5-flash"
+      model: "gemini-2.5-flash"
     });
 
+    const result = await model.generateContent(`
+You are a professional AI prompt engineer.
 
-    const result = await model.generateContent(
-`
-Hanatsara ity prompt ity ho an'ny AI video generator.
+Rewrite the following prompt into a highly detailed cinematic AI video prompt.
 
-Ataovy cinematic, realistic, professional.
+Requirements:
+- Realistic
+- Cinematic
+- High quality
+- Natural lighting
+- Smooth camera movement
+- Ultra detailed
+- Keep the original meaning
 
 Prompt:
 ${prompt}
-`
-    );
-
+`);
 
     const text = result.response.text();
 
-
     res.json({
-      success:true,
-      prompt:text
+      success: true,
+      prompt: text
     });
 
+  } catch (error) {
 
-  }catch(error){
-
-    console.log(error.message);
+    console.log("Gemini Error:", error);
 
     res.json({
-      success:false,
-      error:error.message
+      success: false,
+      error: error.message
     });
 
   }
-
 });
 
-
-
-app.listen(3000,()=>{
- console.log(
- "N-Cut AI V2 Server Running on port 3000"
- );
+app.listen(3000, () => {
+  console.log("N-Cut AI V2 Server Running on port 3000");
 });
