@@ -20,10 +20,7 @@
 <div class="app-container">
 
 
-<!-- SIDEBAR -->
-
 <aside class="sidebar">
-
 
 <div class="logo">
 
@@ -36,47 +33,37 @@ AI Studio
 </div>
 
 
-
 <nav class="menu">
-
 
 <button class="menu-item active">
 🏠 Dashboard
 </button>
 
-
 <button class="menu-item">
 🎨 AI Image
 </button>
-
 
 <button class="menu-item">
 🎬 AI Video
 </button>
 
-
 <button class="menu-item">
 🎙 AI Voice
 </button>
-
 
 <button class="menu-item">
 👄 Avatar
 </button>
 
-
 <button class="menu-item">
 📜 History
 </button>
-
 
 <button class="menu-item">
 ⚙ Settings
 </button>
 
-
 </nav>
-
 
 
 <div class="sidebar-footer">
@@ -91,31 +78,23 @@ N-CUT AI v2
 
 </div>
 
-
 </aside>
 
 
 
 
-
-<!-- MAIN -->
-
 <main class="main-content">
 
 
-
 <header class="top-header">
-
 
 <h1>
 Welcome to N-CUT AI Studio 🚀
 </h1>
 
-
 <p>
 AI Video Generator for African Creators
 </p>
-
 
 </header>
 
@@ -123,11 +102,7 @@ AI Video Generator for African Creators
 
 
 
-<!-- PROMPT -->
-
-
 <section class="card">
-
 
 <label>
 📝 Prompt
@@ -140,9 +115,333 @@ placeholder="Soraty eto ny hevitrao..."
 ></textarea>
 
 
+
 <button 
 id="enhancePrompt"
 class="secondary-btn"
+>
+
+✨ Enhance Prompt
+
+</button>
+
+
+</section>
+
+
+
+
+
+<section class="settings-grid">
+
+
+<div class="card">
+
+<label>
+🌍 Language
+</label>
+
+
+<select id="language">
+
+<option value="mg">
+Malagasy
+</option>
+
+<option value="fr">
+Français
+</option>
+
+<option value="en">
+English
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="card">
+
+<label>
+🎭 Avatar
+</label>
+
+
+<select id="avatar">
+
+<option>
+Malagasy Female
+</option>
+
+<option>
+Malagasy Male
+</option>
+
+<option>
+Professional AI Avatar
+</option>
+
+</select>
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="card">
+
+
+<label>
+📂 Upload Images (1-3)
+</label>
+
+
+<input 
+type="file"
+id="imageUpload"
+accept="image/*"
+multiple
+>
+
+
+<div 
+id="imagePreview"
+class="image-preview">
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section class="generate-area">
+
+
+<button
+id="generateImage"
+class="primary-btn"
+>
+
+🎨 Generate Image
+
+</button>
+
+
+
+<button
+id="generateVideo"
+class="primary-btn"
+>
+
+🎬 Generate Video
+
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="settings-grid">
+
+
+<div class="card">
+
+<label>
+⏱ Duration
+</label>
+
+
+<select id="duration">
+
+
+<option value="5">
+5 seconds
+</option>
+
+
+<option value="10">
+10 seconds
+</option>
+
+
+<option value="15">
+15 seconds
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+<div class="card">
+
+
+<label>
+📐 Aspect Ratio
+</label>
+
+
+<select id="ratio">
+
+
+<option value="16:9">
+16:9 Landscape
+</option>
+
+
+<option value="9:16">
+9:16 TikTok/Reels
+</option>
+
+
+<option value="1:1">
+1:1 Square
+</option>
+
+
+</select>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="card result-card">
+
+
+<h2>
+📺 Preview / Result
+</h2>
+
+
+
+<div 
+id="loading"
+class="loading hidden"
+>
+
+⏳ Generating with AI...
+
+</div>
+
+
+
+
+<div
+id="result"
+class="result-box"
+>
+
+<p>
+Ny vokatra AI dia hiseho eto
+</p>
+
+</div>
+
+
+
+<div
+id="imageResult"
+class="result-box"
+>
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<section class="card status-card">
+
+
+<h3>
+📊 Studio Status
+</h3>
+
+
+
+<div class="status-item">
+
+<span>
+AI Engine
+</span>
+
+
+<strong id="aiStatus">
+Ready ✅
+</strong>
+
+</div>
+
+
+
+
+<div class="status-item">
+
+<span>
+Server
+</span>
+
+
+<strong id="serverStatus">
+Online 🟢
+</strong>
+
+</div>
+
+
+</section>
+
+
+
+
+
+</main>
+
+
+</div>
+
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>secondary-btn"
 >
 
 ✨ Enhance Prompt
